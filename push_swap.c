@@ -29,7 +29,7 @@ void	push(t_stack **dst, t_stack **src)
 	}
 	*src = tmp;
 	if (flag_sole)
-		*src = NULL;
+	
 }
 
 // void	push(t_stack **dst, t_stack **src)
