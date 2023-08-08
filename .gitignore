@@ -1,5 +1,6 @@
 checker_Mac
 push_swap
+.DS_Store
 
 # Prerequisites
 *.d
