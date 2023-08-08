@@ -21,6 +21,13 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
+// typedef enum e_stack_id
+// {
+// 	A,
+// 	B,
+// 	BOTH,
+// }	t_stack_id;
+
 long	ft_atol(const char *from_ascii);
 // int		ft_isdigit(int chr);
 // int		ft_isspace(int chr);
@@ -29,8 +36,19 @@ void	ft_putstr_fd(char *str, int fd);
 int		handle_error(char **argv, int end);
 void	init_stack(t_stack **node, char **argv);
 void	free_null_list(t_stack **head);
+int		check_if_in_order(t_stack *stack);
+void	sort3(t_stack **stack);
 void	push(t_stack **dst, t_stack **src);
 void	swap(t_stack **current);
+void	sa(t_stack **stk_a);
+void	sb(t_stack **stk_b);
+void	ss(t_stack **stk_a, t_stack **stk_b);
+void	ra(t_stack **stk_a);
+void	rb(t_stack **stk_b);
+void	rr(t_stack **stk_a, t_stack **stk_b);
+void	rra(t_stack **stk_a);
+void	rrb(t_stack **stk_b);
+void	rrr(t_stack **stk_a, t_stack **stk_b);
 void	reverse_rotate(t_stack **current);
 void	rotate(t_stack **current);
 
