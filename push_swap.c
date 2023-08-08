@@ -1,5 +1,6 @@
 #include "push_swap.h"
 
+// NEED to decrease 3 more LINES.
 void	push(t_stack **dst, t_stack **src)
 {
 	t_stack	*tmp;
