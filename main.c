@@ -79,10 +79,12 @@ int	main(int argc, char *argv[])
 	init_stack(&stack_a, &argv[1]);
 	if (stack_a == NULL)
 		return (1);
-	char *b[] = {"10", "20", "30", 0};
-	init_stack(&stack_b, b);
-	if (stack_b == NULL)
-		return (1);
+	// char *b[] = {"10", "20", "30", 0};
+	// char *b[] = {"10", 0};
+	// init_stack(&stack_b, b);
+	// init_stack(&stack_b, NULL);
+	// if (stack_b == NULL)
+	// 	return (1);
 	
 	// print_list(stack_a);
 	// swap(&stack_a);
@@ -99,6 +101,14 @@ int	main(int argc, char *argv[])
 	printf("\nB\n");
 	print_list(stack_b);
 	push(&stack_a, &stack_b);
+	// push(&stack_b, &stack_a);
+
+	// push(&stack_b, &stack_a);
+	// push(&stack_b, &stack_a);
+	// push(&stack_b, &stack_a);
+	// push(&stack_b, &stack_a);
+	// push(&stack_b, &stack_a);
+	// push(&stack_b, &stack_a);
 	printf("\nA\n");
 	print_list(stack_a);
 	printf("\nB\n");
