@@ -5,14 +5,10 @@
 void	push(t_stack **dst, t_stack **src)
 {
 	t_stack	*tmp;
-	int		flag_sole;
 
 	if (*src == NULL)
 		return ;
 	tmp = (*src)->next;
-	flag_sole = 0;
-	if ((*src)->next == *src)
-		flag_sole = 1;
 	((*src)->prev)->next = (*src)->next;
 	((*src)->next)->prev = (*src)->prev;
 	if (*dst == NULL)
@@ -30,7 +26,7 @@ void	push(t_stack **dst, t_stack **src)
 		*dst = (*dst)->prev;
 	}
 	*src = tmp;
-	if (flag_sole)
+	if (lstsize_circle(*src) == 1)
 		*src = NULL;
 }
 
@@ -45,3 +41,17 @@ void	push(t_stack **dst, t_stack **src)
 // 	ft_putstr_fd("pb\n", STDOUT_FILENO);
 // 	push(stk_b, stk_a);
 // }
+
+void	pa_pb(t_stack **stk_a, t_stack **stk_b, int stk_id)
+{
+	if (stk_id == A)
+	{
+		ft_putstr_fd("pa\n", STDOUT_FILENO);
+		push(stk_a, stk_b);
+	}
+	if (stk_id == B)
+	{
+		ft_putstr_fd("pb\n", STDOUT_FILENO);
+		push(stk_b, stk_a);
+	}
+}
