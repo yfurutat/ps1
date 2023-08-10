@@ -70,6 +70,7 @@ void	sort3(t_stack **stack)
 	mid = ((*stack)->next)->content;
 	if ((*stack)->content > mid && mid > ((*stack)->next->next)->content)
 		sa(stack);
+	mid = ((*stack)->next)->content;
 	if (mid > (*stack)->content && mid > ((*stack)->next->next)->content)
 	{
 		if ((*stack)->content > ((*stack)->next->next)->content)

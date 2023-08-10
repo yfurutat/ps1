@@ -1,5 +1,16 @@
 #include "push_swap.h"
 
+// void	swap(t_stack **current)
+// {
+// 	t_stack	*tmp;
+
+// 	if (*current == NULL)
+// 		return ;
+// 	tmp = *current;
+// 	*current = ((*current)->next);
+// 	((*current)->next) = tmp;
+// }
+
 void	swap(t_stack **current)
 {
 	int	tmp;
