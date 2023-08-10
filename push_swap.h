@@ -38,7 +38,9 @@ int		handle_error(char **argv, int end);
 void	init_stack(t_stack **node, char **argv);
 void	free_null_list(t_stack **head);
 int		check_if_in_order(t_stack *stack);
+int		check_order_descending(t_stack *stack);
 int		lstsize_circle(t_stack *current);
+int		find_median(t_stack *stk, int size, int boarder);
 
 void	sort3(t_stack **stack);
 void	push(t_stack **dst, t_stack **src);

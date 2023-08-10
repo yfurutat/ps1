@@ -6,7 +6,7 @@
 /*   By: efmacm23 <efmacm23@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 19:31:28 by efmacm23          #+#    #+#             */
-/*   Updated: 2023/08/10 17:44:32 by efmacm23         ###   ########.fr       */
+/*   Updated: 2023/08/10 20:11:18 by efmacm23         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	lstsize_circle(t_stack *current)
 	return (cnt);
 }
 
-// void	insert(t_stack **stk_a, t_stack **stk_b, int num_args)
+// void	insert_one(t_stack **stk_a, t_stack **stk_b, int num_args)
 // {
 // 	t_stack	*tmp;
 // 	int		i;
@@ -113,7 +113,8 @@ void	push_swap(t_stack **stk_a, t_stack **stk_b, int num_args)
 	// int	cnt;
 
 	(void)stk_b;
-	// printf("%d\n", check_if_in_order(*stk_a));
+	printf("ascend: %d\n", check_if_in_order(*stk_a));
+	printf("descend: %d\n", check_order_descending(*stk_a));
 	if (num_args == 1 || check_if_in_order(*stk_a) == 0)
 		return ;
 	else if (num_args == 2)
@@ -162,11 +163,12 @@ int	main(int argc, char *argv[])
 	if (stack_a == NULL)
 		return (1);
 	printf("size: %d\n", lstsize_circle(stack_a));	
+	printf("med: %d\n", find_median(stack_a, lstsize_circle(stack_a), lstsize_circle(stack_a)/2));
 	print_list(stack_a);
 	printf("\n");
-	swap(&stack_a);
+	// swap(&stack_a);
+	push_swap(&stack_a, &stack_b, argc - 1);
 	print_list(stack_a);
-	// push_swap(&stack_a, &stack_b, argc - 1);
 	free_null_list(&stack_a);
 	free_null_list(&stack_b);
 	return (0);

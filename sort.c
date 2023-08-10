@@ -67,8 +67,9 @@ void	sort3(t_stack **stack)
 
 	if (stack == NULL)
 		return ;
-	mid = ((*stack)->next)->content;
-	if ((*stack)->content > mid && mid > ((*stack)->next->next)->content)
+	// mid = ((*stack)->next)->content;
+	// if ((*stack)->content > mid && mid > ((*stack)->next->next)->content)
+	if (check_order_descending(*stack) == 0)
 		sa(stack);
 	mid = ((*stack)->next)->content;
 	if (mid > (*stack)->content && mid > ((*stack)->next->next)->content)
@@ -87,7 +88,7 @@ void	sort3(t_stack **stack)
 			sa(stack);
 		else if ((*stack)->content > ((*stack)->next->next)->content)
 			ra(stack);
-	}	
+	}
 }
 
 // void	sort3(t_stack **stack)
