@@ -61,14 +61,14 @@ int	check_order_descending(t_stack *stack)
 	return (0);
 }
 
+	// mid = ((*stack)->next)->content;
+	// if ((*stack)->content > mid && mid > ((*stack)->next->next)->content)
 void	sort3(t_stack **stack)
 {
 	int	mid;
 
 	if (stack == NULL)
 		return ;
-	// mid = ((*stack)->next)->content;
-	// if ((*stack)->content > mid && mid > ((*stack)->next->next)->content)
 	if (check_order_descending(*stack) == 0)
 		sa(stack);
 	mid = ((*stack)->next)->content;
@@ -135,3 +135,8 @@ void	sort3(t_stack **stack)
 // 		}
 // 	}
 // }
+
+void	main_sort(t_stack *stk_a, t_stack *stk_b)
+{
+
+}
