@@ -34,15 +34,15 @@ int	check_if_in_order(t_stack *stack)
 	t_stack	*tmp;
 
 	if (stack == NULL)
-		return (0);
+		return (EMPTY);
 	tmp = stack;
 	while (tmp->next != stack)
 	{
 		if (tmp->content > (tmp->next)->content)
-			return (1);
+			return (NO);
 		tmp = tmp->next;
 	}
-	return (0);
+	return (YES);
 }
 
 int	check_order_descending(t_stack *stack)
@@ -50,15 +50,15 @@ int	check_order_descending(t_stack *stack)
 	t_stack	*tmp;
 
 	if (stack == NULL)
-		return (0);
+		return (EMPTY);
 	tmp = stack;
 	while (tmp->next != stack)
 	{
 		if (tmp->content < (tmp->next)->content)
-			return (1);
+			return (NO);
 		tmp = tmp->next;
 	}
-	return (0);
+	return (YES);
 }
 
 	// mid = ((*stack)->next)->content;
@@ -69,7 +69,7 @@ void	sort3(t_stack **stack)
 
 	if (stack == NULL)
 		return ;
-	if (check_order_descending(*stack) == 0)
+	if (check_order_descending(*stack) == YES)
 		sa(stack);
 	mid = ((*stack)->next)->content;
 	if (mid > (*stack)->content && mid > ((*stack)->next->next)->content)
@@ -136,7 +136,18 @@ void	sort3(t_stack **stack)
 // 	}
 // }
 
-void	main_sort(t_stack *stk_a, t_stack *stk_b)
-{
+// void	main_sort(t_stack **stk_a, t_stack **stk_b, t_id *info)
+// {
+// 	int	pivot;
+// 	int	i;
 
-}
+// 	pivot = find_median(*stk_a, info);
+// 	i = 0;
+// 	while (i < info->size)
+// 	{
+// 		while ()
+// 		if ((*stk_a)->id < pivot)
+// 			pa_pb(stk_a, stk_b, B);
+
+// 	}
+// }

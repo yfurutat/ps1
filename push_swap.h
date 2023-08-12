@@ -14,9 +14,27 @@
 # include <limits.h>
 # include <signal.h>
 
+typedef struct s_lst
+{
+	int				content;
+	int				id;
+	// struct s_info	*info;
+	struct s_lst	*next;
+	struct s_lst	*prev;
+} 	t_lst;
+
+typedef struct s_info
+{
+	int	max;
+	int	min;
+	int	size;
+	int	boarder;
+}	t_id;
+
 typedef struct s_stack
 {
 	int				content;
+	int				id;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
@@ -27,6 +45,14 @@ typedef enum e_stack_id
 	B,
 	BOTH,
 }	t_stkid;
+
+typedef enum e_chk
+{
+	YES,
+	NO,
+	ERROR,
+	EMPTY,
+}	t_chk;
 
 long	ft_atol(const char *from_ascii);
 // int		ft_isdigit(int chr);
@@ -40,7 +66,10 @@ void	free_null_list(t_stack **head);
 int		check_if_in_order(t_stack *stack);
 int		check_order_descending(t_stack *stack);
 int		lstsize_circle(t_stack *current);
-int		find_median(t_stack *stk, int size, int boarder);
+int		find_median(t_stack *stk, t_id *info);
+int		find_max(t_stack *stk, t_id *info);
+int		find_min(t_stack *stk, t_id *info);
+void	coord_comp(t_stack **stk, t_id *info);
 
 void	sort3(t_stack **stack);
 void	push(t_stack **dst, t_stack **src);

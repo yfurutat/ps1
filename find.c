@@ -1,33 +1,50 @@
 #include "push_swap.h"
 
-// median_boarder = lstsize_circle(stk) / 2 (+ 1);
-// *anchor = *stk;
-// while (stack->next != anchor)
-// if (*stk->content > anchor->content)
-// larger++;
-// if (*stk->content < anchor->content)
-// smaller++;
-// if (smaller > med_achor && larger > med_anchor)
-// recur(); or
-// anchor = anchor->next;
-// }
-// stk = stk->next;
-// }
-// if (smaller == median_boarder || larger == median_boarder)
-// median = *stk->content
+int	find_max(t_stack *stk, t_id *info)
+{
+	t_stack *tmp;
+	int		i;
 
-// 4 3 -10 50
-// 3 0 2
+	i = 0;
+	tmp = stk;
+	info->size = lstsize_circle(stk);
+	while (i < info->size)
+	{
+		if (tmp->content < stk->content)
+			tmp = stk;
+		stk = stk->next;
+		i++;
+		if (stk == tmp)
+			break ;
+	}
+	tmp->id = info->size - 1;
+	return (tmp->content);
+}
+	// printf("content: %d id: %d\n", tmp->content, tmp->id);
 
-	// boarder = lstsize_circle(stk) / 2;
+int	find_min(t_stack *stk, t_id *info)
+{
+	t_stack *tmp;
+	int		i;
 
-	// printf("\n");
-	// printf("boarder: %d\n", boarder);
-	// printf("stk_cntnt: %d\n", stk->content);
-	// printf("tmp_cntnt: %d\n", tmp->content);
-	// printf("\n");
-	// int	median;
-int	find_median(t_stack *stk, int size, int boarder)
+	i = 0;
+	tmp = stk;
+	info->size = lstsize_circle(stk);
+	while (i < info->size)
+	{
+		if (tmp->content > stk->content)
+			tmp = stk;
+		stk = stk->next;
+		i++;
+		if (stk == tmp)
+			break ;
+	}
+	tmp->id = 0;
+	return (tmp->content);
+}
+	// printf("content: %d id: %d\n", tmp->content, tmp->id);
+
+int	find_median(t_stack *stk, t_id *info)
 {
 	t_stack	*tmp;
 	int 	larger;
@@ -38,18 +55,19 @@ int	find_median(t_stack *stk, int size, int boarder)
 	larger = 0;
 	smaller = 0;
 	tmp = stk->next;
-	while (i < size)
+	info->boarder = info->size / 2;
+	while (i < info->size)
 	{
 		if (tmp->content > stk->content)
 			larger++;
 		if (tmp->content < stk->content)
 			smaller++;
-		if (smaller > boarder || larger > boarder)
-			return (find_median(stk->next, size, boarder));
+		if (smaller > info->boarder || larger > info->boarder)
+			return (find_median(stk->next, info));
 		tmp = tmp->next;
 		i++;
 	}
-	if (smaller == boarder || larger == boarder)
+	if (smaller == info->boarder || larger == info->boarder)
 		return ((*stk).content);
 	else
 		return (0);
@@ -144,3 +162,31 @@ int	find_median(t_stack *stk, int size, int boarder)
 		// 	larger = 0;
 		// 	smaller = 0;
 		// }
+
+// median_boarder = lstsize_circle(stk) / 2 (+ 1);
+// *anchor = *stk;
+// while (stack->next != anchor)
+// if (*stk->content > anchor->content)
+// larger++;
+// if (*stk->content < anchor->content)
+// smaller++;
+// if (smaller > med_achor && larger > med_anchor)
+// recur(); or
+// anchor = anchor->next;
+// }
+// stk = stk->next;
+// }
+// if (smaller == median_boarder || larger == median_boarder)
+// median = *stk->content
+
+// 4 3 -10 50
+// 3 0 2
+
+	// boarder = lstsize_circle(stk) / 2;
+
+	// printf("\n");
+	// printf("boarder: %d\n", boarder);
+	// printf("stk_cntnt: %d\n", stk->content);
+	// printf("tmp_cntnt: %d\n", tmp->content);
+	// printf("\n");
+	// int	median;

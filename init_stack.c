@@ -18,6 +18,23 @@ void	free_null_list(t_stack **head)
 	}
 }
 
+// void	free_null_list(t_stack **head)
+// {
+// 	t_stack *current = *head;
+// 	t_stack *next;
+
+// 	while (current != NULL)
+// 	{
+// 		next = current->next;
+// 		free(current);
+// 		current = next;
+// 	}
+// 	*head = NULL;
+// }
+	 // Set the head pointer to NULL after freeing the list
+
+
+
 	// return (1);
 static int	add_back(t_stack **head, int num)
 {

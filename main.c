@@ -6,7 +6,7 @@
 /*   By: efmacm23 <efmacm23@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 19:31:28 by efmacm23          #+#    #+#             */
-/*   Updated: 2023/08/10 20:11:18 by efmacm23         ###   ########.fr       */
+/*   Updated: 2023/08/13 00:27:03 by efmacm23         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,6 @@
 	// if (num_args == 1)
 	// else if (num_args == 2)
 
-int	lstsize_circle(t_stack *current)
-{
-	t_stack	*head;
-	int		cnt;
-
-	cnt = 0;
-	if (current == NULL)
-		return (cnt);
-	cnt++;
-	head = current;
-	while(current->next != head)
-	{
-		current = current->next;
-		cnt++;
-	}
-	return (cnt);
-}
 
 // void	insert_one(t_stack **stk_a, t_stack **stk_b, int num_args)
 // {
@@ -149,6 +132,7 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	t_id	info;
 
 	if (argc < 2)
 		exit (1);
@@ -163,7 +147,13 @@ int	main(int argc, char *argv[])
 	if (stack_a == NULL)
 		return (1);
 	printf("size: %d\n", lstsize_circle(stack_a));	
-	printf("med: %d\n", find_median(stack_a, lstsize_circle(stack_a), lstsize_circle(stack_a)/2));
+	printf("med: %d\n", find_median(stack_a, &info));
+	info.max = find_max(stack_a, &info);
+	printf("max: %d\n", info.max);
+	info.min = find_min(stack_a, &info);
+	printf("min: %d\n", info.min);
+	coord_comp(&stack_a, &info);
+	// printf("%d\n", );
 	print_list(stack_a);
 	printf("\n");
 	// swap(&stack_a);

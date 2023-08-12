@@ -8,7 +8,9 @@ SRCS1	:=	main.c \
 			cmd_s.c \
 			cmd_r.c \
 			cmd_rr.c \
-			median.c \
+			find.c \
+			checkers.c \
+			coord_comp.c \
 			print.c
 
 OBJS	:=	$(SRCS1:.c=.o)
