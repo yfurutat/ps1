@@ -7,10 +7,12 @@
 # define POSITIVE (1)
 # define NEGATIVE (-1)
 
+# include <unistd.h>
+# include <stdlib.h>
+
+//comment out before commit
 # include <string.h>
 # include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include <limits.h>
 # include <signal.h>
 
@@ -70,7 +72,9 @@ int		find_median(t_stack *stk, t_id *info);
 int		find_max(t_stack *stk, t_id *info);
 int		find_min(t_stack *stk, t_id *info);
 void	coord_comp(t_stack **stk, t_id *info);
+int		divide_list(t_stack **stk_a, t_stack **stk_b, int pivot, int size);
 
+void	main_sort(t_stack **stk_a, t_stack **stk_b, t_id *info);
 void	sort3(t_stack **stack);
 void	push(t_stack **dst, t_stack **src);
 void	swap(t_stack **current);

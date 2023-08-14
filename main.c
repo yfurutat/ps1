@@ -6,7 +6,7 @@
 /*   By: efmacm23 <efmacm23@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 19:31:28 by efmacm23          #+#    #+#             */
-/*   Updated: 2023/08/13 00:27:03 by efmacm23         ###   ########.fr       */
+/*   Updated: 2023/08/13 03:14:58 by efmacm23         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,10 @@ int	main(int argc, char *argv[])
 	init_stack(&stack_a, &argv[1]);
 	if (stack_a == NULL)
 		return (1);
-	printf("size: %d\n", lstsize_circle(stack_a));	
-	printf("med: %d\n", find_median(stack_a, &info));
+	info.size = lstsize_circle(stack_a);
+	printf("size: %d\n", info.size);
+	info.boarder = find_median(stack_a, &info);
+	printf("med: %d\n", info.boarder);
 	info.max = find_max(stack_a, &info);
 	printf("max: %d\n", info.max);
 	info.min = find_min(stack_a, &info);
@@ -157,12 +159,23 @@ int	main(int argc, char *argv[])
 	print_list(stack_a);
 	printf("\n");
 	// swap(&stack_a);
-	push_swap(&stack_a, &stack_b, argc - 1);
-	print_list(stack_a);
+	// push_swap(&stack_a, &stack_b, argc - 1);
+	main_sort(&stack_a, &stack_b, &info);
+	if (stack_a)
+		print_list(stack_a);
+	if (stack_b)
+		print_list(stack_b);
 	free_null_list(&stack_a);
 	free_null_list(&stack_b);
 	return (0);
 }
+	// printf("YES: %d\n", YES);
+	// printf("NO: %d\n", NO);
+	// printf("ERROR: %d\n", ERROR);
+	// printf("EMPTY: %d\n", EMPTY);
+	// printf("A: %d\n", A);
+	// printf("B: %d\n", B);
+	// printf("BOTH: %d\n", BOTH);
 
 // __attribute__((destructor)) static void destructor()
 // {

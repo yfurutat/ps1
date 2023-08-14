@@ -48,14 +48,14 @@ void	coord_comp(t_stack **stk, t_id *info)
 		tmp_list = *stk;
 		i++;
 	}
+	i = 0;
+	while (i < info->size)
+	{
+		printf("index: %d content: %d\n", tmp_list->id, tmp_list->content);
+		tmp_list = tmp_list->next;
+		i++;
+	}
 }
-	// i = 0;
-	// while (i < info->size)
-	// {
-	// 	printf("index: %d content: %d\n", tmp_list->id, tmp_list->content);
-	// 	tmp_list = tmp_list->next;
-	// 	i++;
-	// }
 
 // static int	get_index(t_list *start)
 // {

@@ -18,4 +18,34 @@ int	lstsize_circle(t_stack *current)
 	return (cnt);
 }
 
+int	check_if_in_order(t_stack *stack)
+{
+	t_stack	*tmp;
 
+	if (stack == NULL)
+		return (EMPTY);
+	tmp = stack;
+	while (tmp->next != stack)
+	{
+		if (tmp->content > (tmp->next)->content)
+			return (NO);
+		tmp = tmp->next;
+	}
+	return (YES);
+}
+
+int	check_order_descending(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	if (stack == NULL)
+		return (EMPTY);
+	tmp = stack;
+	while (tmp->next != stack)
+	{
+		if (tmp->content < (tmp->next)->content)
+			return (NO);
+		tmp = tmp->next;
+	}
+	return (YES);
+}
