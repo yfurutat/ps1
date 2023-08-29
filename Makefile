@@ -45,7 +45,7 @@ files	:
 
 commit	:
 	git status
-	git add $(SRCS) $(HFILE) Makefile 
+	git add $(SRCS) $(HFILE) Makefile .gitignore
 	git commit -m "commit all through Makefile"
 	git status
 
