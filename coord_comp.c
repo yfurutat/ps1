@@ -24,35 +24,35 @@
 	// }
 void	coord_comp(t_stack **stk, t_id *info)
 {
-	t_stack	*tmp_list;
-	int		tmp_num;
+	t_stack	*current;
+	int		compressed_value;
 	int		i;
 	int		j;
 
 	i = 0;
-	tmp_list = *stk;
-	tmp_num = 0;
+	// compressed_value = 0;
 	while (i < info->size)
 	{
 		j = 0;
+		compressed_value = 0;
+		current = *stk;
 		while (j < info->size)
 		{
-			if (tmp_list->content < (*stk)->content)
-				tmp_num++;
-			tmp_list = tmp_list->next;
+			if (current->content < (*stk)->content)
+				compressed_value++;
+			current = current->next;
 			j++;
 		}
-		(*stk)->id = tmp_num;
-		tmp_num = 0;
+		(*stk)->id = compressed_value;
 		(*stk) = (*stk)->next;
-		tmp_list = *stk;
+		// current = *stk;
 		i++;
 	}
 	i = 0;
 	while (i < info->size)
 	{
-		printf("index: %d content: %d\n", tmp_list->id, tmp_list->content);
-		tmp_list = tmp_list->next;
+		printf("index: %d content: %d\n", current->id, current->content);
+		current = current->next;
 		i++;
 	}
 }
@@ -75,7 +75,7 @@ void	coord_comp(t_stack **stk, t_id *info)
 // 	return (index + 1);
 // }
 
-// static void	compress_coordinates(t_list *head)
+// void	compress_coordinates(t_list *head)
 // {
 // 	t_list	*tmp;
 

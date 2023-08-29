@@ -9,11 +9,11 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
 //comment out before commit
 # include <string.h>
 # include <stdio.h>
-# include <limits.h>
 # include <signal.h>
 
 typedef struct s_lst
