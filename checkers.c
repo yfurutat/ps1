@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checkers.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 00:51:42 by yfurutat          #+#    #+#             */
+/*   Updated: 2023/11/04 00:51:43 by yfurutat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	lstsize_circle(t_stack *current)
@@ -10,7 +22,7 @@ int	lstsize_circle(t_stack *current)
 		return (cnt);
 	cnt++;
 	head = current;
-	while(current->next != head)
+	while (current->next != head)
 	{
 		current = current->next;
 		cnt++;

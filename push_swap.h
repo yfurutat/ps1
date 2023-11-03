@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 00:53:36 by yfurutat          #+#    #+#             */
+/*   Updated: 2023/11/04 00:53:50 by yfurutat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -20,10 +32,10 @@ typedef struct s_lst
 {
 	int				content;
 	int				id;
-	// struct s_info	*info;
 	struct s_lst	*next;
 	struct s_lst	*prev;
-} 	t_lst;
+}	t_lst;
+	// struct s_info	*info;
 
 typedef struct s_info
 {
