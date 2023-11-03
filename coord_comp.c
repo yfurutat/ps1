@@ -34,7 +34,7 @@ void	coord_comp(t_stack **stk, t_id *info)
 	while (i < info->size)
 	{
 		j = 0;
-		compressed_value = 0;
+		compressed_value = 1;
 		current = *stk;
 		while (j < info->size)
 		{

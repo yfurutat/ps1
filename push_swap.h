@@ -6,7 +6,7 @@
 /*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 00:53:36 by yfurutat          #+#    #+#             */
-/*   Updated: 2023/11/04 00:53:50 by yfurutat         ###   ########.fr       */
+/*   Updated: 2023/11/04 06:22:49 by yfurutat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ typedef enum e_stack_id
 
 typedef enum e_chk
 {
-	YES,
-	NO,
-	ERROR,
-	EMPTY,
+	YES = 0,
+	NO = 1,
+	ERROR = 2,
+	EMPTY = 3,
 }	t_chk;
 
 long	ft_atol(const char *from_ascii);
@@ -86,14 +86,17 @@ int		find_min(t_stack *stk, t_id *info);
 void	coord_comp(t_stack **stk, t_id *info);
 int		divide_list(t_stack **stk_a, t_stack **stk_b, int pivot, int size);
 
-void	main_sort(t_stack **stk_a, t_stack **stk_b, t_id *info);
+void	my_radix(t_stack **stack_a, t_stack **stack_b, int max);
+// void	main_sort(t_stack **stk_a, t_stack **stk_b, t_id *info);
 void	sort3(t_stack **stack);
 void	push(t_stack **dst, t_stack **src);
 void	swap(t_stack **current);
 void	rotate(t_stack **current);
 void	reverse_rotate(t_stack **current);
 
-void	pa_pb(t_stack **stk_a, t_stack **stk_b, int stk_id);
+// void	pa_pb(t_stack **stk_a, t_stack **stk_b, int stk_id);
+void	pa(t_stack **stk_a, t_stack **stk_b);
+void	pb(t_stack **stk_a, t_stack **stk_b);
 void	sa(t_stack **stk_a);
 void	sb(t_stack **stk_b);
 void	ss(t_stack **stk_a, t_stack **stk_b);

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 02:47:58 by yfurutat          #+#    #+#             */
+/*   Updated: 2023/11/04 02:47:59 by yfurutat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	ft_isspace(int chr);
 static int	ft_isdigit(int chr);
 static int	check_sign(const char **from_ascii, int sign);
-static int	check_flows(unsigned long long digit2p, 
+static int	check_flows(unsigned long long digit2p, \
 	unsigned long long digit1, int sign);
 
 long	ft_atol(const char *from_ascii)
@@ -57,14 +69,14 @@ static int	check_sign(const char **from_ascii, int sign)
 }
 	// printf("%d %c\n", sign, **from_ascii);
 
-static int	check_flows(unsigned long long digit2p, 
+static int	check_flows(unsigned long long digit2p, \
 	unsigned long long digit1, int sign)
 {
 	if (sign == POSITIVE)
 	{
 		if (digit2p > (unsigned long long)(LLONG_MAX / 10))
 			return (OVERFLOW);
-		if (digit2p == (unsigned long long)(LLONG_MAX / 10) 
+		if (digit2p == (unsigned long long)(LLONG_MAX / 10) \
 			&& digit1 > (unsigned long long)(LLONG_MAX % 10))
 			return (OVERFLOW);
 	}
@@ -72,7 +84,7 @@ static int	check_flows(unsigned long long digit2p,
 	{
 		if (digit2p > (unsigned long long)(LLONG_MAX / 10))
 			return (UNDERFLOW);
-		if (digit2p == (unsigned long long)(LLONG_MAX / 10) 
+		if (digit2p == (unsigned long long)(LLONG_MAX / 10) \
 			&& digit1 > (unsigned long long)(LLONG_MIN % 10))
 			return (UNDERFLOW);
 	}

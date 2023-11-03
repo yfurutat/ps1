@@ -6,7 +6,7 @@
 /*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 00:53:09 by yfurutat          #+#    #+#             */
-/*   Updated: 2023/11/04 00:53:10 by yfurutat         ###   ########.fr       */
+/*   Updated: 2023/11/04 05:28:29 by yfurutat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ int	divide_list(t_stack **stk_a, t_stack **stk_b, int pivot, int size)
 	{
 		if ((*stk_a)->id < pivot)
 		{
-			pa_pb(stk_a, stk_b, B);
+			pb(stk_a, stk_b);
 			j++;
 		}
 		*stk_a = (*stk_a)->next;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: efmacm23 <efmacm23@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 19:31:28 by efmacm23          #+#    #+#             */
-/*   Updated: 2023/08/28 12:51:59 by efmacm23         ###   ########.fr       */
+/*   Updated: 2023/11/04 05:53:02 by yfurutat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 // 	// init_stack(&stack_b, NULL);
 // 	// if (stack_b == NULL)
 // 	// 	return (1);
-	
+
 // 	// print_list(stack_a);
 // 	// swap(&stack_a);
 // 	// printf("\n");
@@ -128,6 +128,7 @@ void	push_swap(t_stack **stk_a, t_stack **stk_b, int num_args)
 	// printf("%p\n", *stk_b);
 }
 
+//
 int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
@@ -155,12 +156,19 @@ int	main(int argc, char *argv[])
 	info.min = find_min(stack_a, &info);
 	printf("min: %d\n", info.min);
 	coord_comp(&stack_a, &info);
-	// printf("%d\n", );
 	print_list(stack_a);
 	printf("\n");
-	// swap(&stack_a);
-	// push_swap(&stack_a, &stack_b, argc - 1);
-	main_sort(&stack_a, &stack_b, &info);
+	// main_sort(&stack_a, &stack_b, &info);
+	push_swap(&stack_a, &stack_b, argc - 1);
+	
+	// t_stack
+	// for (int i = 0; i < info.size ; i++)
+	// {
+	printf("index: %d content: %d\n", stack_a->id, stack_a->content);
+	// 	current = current->next;
+	// 	i++;
+	// }
+	my_radix(&stack_a, &stack_b, argc - 1);
 	if (stack_a)
 		print_list(stack_a);
 	if (stack_b)
@@ -169,6 +177,8 @@ int	main(int argc, char *argv[])
 	free_null_list(&stack_b);
 	return (0);
 }
+	// printf("%d\n", );
+	// swap(&stack_a);
 	// printf("YES: %d\n", YES);
 	// printf("NO: %d\n", NO);
 	// printf("ERROR: %d\n", ERROR);

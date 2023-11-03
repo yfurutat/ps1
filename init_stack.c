@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 00:57:37 by yfurutat          #+#    #+#             */
+/*   Updated: 2023/11/04 00:57:38 by yfurutat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	free_null_list(t_stack **head)
@@ -31,7 +43,7 @@ void	free_null_list(t_stack **head)
 // 	}
 // 	*head = NULL;
 // }
-	 // Set the head pointer to NULL after freeing the list
+	// Set the head pointer to NULL after freeing the list
 
 
 

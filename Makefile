@@ -6,14 +6,15 @@ SRCS	:=	main.c \
 			find.c \
 			checkers.c \
 			coord_comp.c \
-			sort.c \
+			radix.c \
 			cmd_p.c \
 			cmd_s.c \
 			cmd_r.c \
 			cmd_rr.c \
+			cmds.c \
+			print.c \
 			sort.c \
-			qsort.c \
-			print.c
+#			qsort.c \
 
 OBJS	:=	$(SRCS:.c=.o)
 NAME	:=	push_swap
