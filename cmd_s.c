@@ -20,6 +20,7 @@ void	swap(t_stack **current)
 	tmp = (*current)->content;
 	(*current)->content = ((*current)->next)->content;
 	((*current)->next)->content = tmp;
+	g_cmd_n++;
 }
 
 //1.

@@ -45,17 +45,17 @@ void	coord_comp(t_stack **stk, t_id *info)
 		}
 		(*stk)->id = compressed_value;
 		(*stk) = (*stk)->next;
-		// current = *stk;
-		i++;
-	}
-	i = 0;
-	while (i < info->size)
-	{
-		printf("index: %d content: %d\n", current->id, current->content);
-		current = current->next;
 		i++;
 	}
 }
+		// current = *stk;
+	// i = 0;
+	// while (i < info->size)
+	// {
+	// 	printf("index: %d content: %d\n", current->id, current->content);
+	// 	current = current->next;
+	// 	i++;
+	// }
 
 // static int	get_index(t_list *start)
 // {

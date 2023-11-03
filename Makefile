@@ -6,7 +6,6 @@ SRCS	:=	main.c \
 			find.c \
 			checkers.c \
 			coord_comp.c \
-			radix.c \
 			cmd_p.c \
 			cmd_s.c \
 			cmd_r.c \
@@ -14,6 +13,7 @@ SRCS	:=	main.c \
 			cmds.c \
 			print.c \
 			sort.c \
+			radix.c \
 #			qsort.c \
 
 OBJS	:=	$(SRCS:.c=.o)

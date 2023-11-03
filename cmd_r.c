@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cmd_r.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 07:36:16 by yfurutat          #+#    #+#             */
+/*   Updated: 2023/11/04 07:36:17 by yfurutat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	rotate(t_stack **current)
@@ -5,6 +17,7 @@ void	rotate(t_stack **current)
 	if (*current == NULL)
 		return ;
 	*current = (*current)->next;
+	g_cmd_n++;
 }
 
 void	ra(t_stack **stk_a)

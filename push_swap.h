@@ -6,7 +6,7 @@
 /*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 00:53:36 by yfurutat          #+#    #+#             */
-/*   Updated: 2023/11/04 06:22:49 by yfurutat         ###   ########.fr       */
+/*   Updated: 2023/11/04 07:13:36 by yfurutat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ typedef enum e_chk
 	ERROR = 2,
 	EMPTY = 3,
 }	t_chk;
+
+size_t	g_cmd_n;
 
 long	ft_atol(const char *from_ascii);
 // int		ft_isdigit(int chr);

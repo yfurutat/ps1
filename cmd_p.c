@@ -1,4 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cmd_p.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 07:11:52 by yfurutat          #+#    #+#             */
+/*   Updated: 2023/11/04 07:14:18 by yfurutat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
+void	issole(t_stack **dst, t_stack **src)
+{
+	*dst = *src;
+	(*dst)->next = *dst;
+	(*dst)->prev = *dst;
+}
 
 // NEED to decrease 3 more LINES.
 //28L
@@ -8,15 +27,14 @@ void	push(t_stack **dst, t_stack **src)
 
 	if (*src == NULL)
 		return ;
-	tmp = (*src)->next;
+	if (lstsize_circle(*src) == 1)
+		tmp = NULL;
+	else
+		tmp = (*src)->next;
 	((*src)->prev)->next = (*src)->next;
 	((*src)->next)->prev = (*src)->prev;
 	if (*dst == NULL)
-	{
-		*dst = *src;
-		(*dst)->next = *dst;
-		(*dst)->prev = *dst;
-	}
+		issole(dst, src);
 	else if (*dst != NULL)
 	{
 		(*src)->next = *dst;
@@ -26,9 +44,22 @@ void	push(t_stack **dst, t_stack **src)
 		*dst = (*dst)->prev;
 	}
 	*src = tmp;
-	if (lstsize_circle(*src) == 1)
-		*src = NULL;
+	g_cmd_n++;
 }
+	// if (lstsize_circle(*src) == 1)
+	// {
+	// 	*src = NULL;
+	// 	// (*src)->next = *src;
+	// 	// (*src)->prev = *src;
+	// }
+	// {
+	// 	// *dst = *src;
+	// 	// (*dst)->next = *dst;
+	// 	// (*dst)->prev = *dst;
+	// 	// printf("%d\n", (*dst)->id);
+	// 	// printf("%d\n", ((*dst)->next)->id);
+	// 	// printf("%d\n", ((*dst)->prev)->id);
+	// }
 
 void	pa(t_stack **stk_a, t_stack **stk_b)
 {

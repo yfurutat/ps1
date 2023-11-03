@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   find.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 07:36:03 by yfurutat          #+#    #+#             */
+/*   Updated: 2023/11/04 07:36:04 by yfurutat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	find_max(t_stack *stk, t_id *info)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	int		i;
 
 	i = 0;
@@ -24,7 +36,7 @@ int	find_max(t_stack *stk, t_id *info)
 
 int	find_min(t_stack *stk, t_id *info)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	int		i;
 
 	i = 0;

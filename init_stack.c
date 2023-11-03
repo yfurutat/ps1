@@ -6,7 +6,7 @@
 /*   By: yfurutat <yfurutat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 00:57:37 by yfurutat          #+#    #+#             */
-/*   Updated: 2023/11/04 00:57:38 by yfurutat         ###   ########.fr       */
+/*   Updated: 2023/11/04 06:37:42 by yfurutat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	free_null_list(t_stack **head)
 	// return (1);
 static int	add_back(t_stack **head, int num)
 {
-	t_stack *new;
-	t_stack *last;
+	t_stack	*new;
+	t_stack	*last;
 
 	new = malloc(sizeof(t_stack));
 	if (new == NULL)

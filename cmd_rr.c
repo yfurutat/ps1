@@ -5,6 +5,7 @@ void	reverse_rotate(t_stack **current)
 	if (*current == NULL)
 		return ;
 	*current = (*current)->prev;
+	g_cmd_n++;
 }
 
 void	rra(t_stack **stk_a)
